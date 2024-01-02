@@ -1,0 +1,57 @@
+'''
+Illustrare la complessità computazionale del programma realizzato nell'Esercizio 1
+calcolando in modo approssimato la funzione temporare T(n), assumendo che n siano le
+righe del file.
+
+Esprimere il risultato con la notazione O-grande.
+
+La notazione O fornisce una delimitazione superiore al tempo di esecuzione di un algoritmo, 
+cioè fornisce una valutazione approssimata per eccesso.
+'''
+
+def open_file():
+
+    nome_file = input("Inserire nome file contenente elenco parole: ")
+
+    return nome_file
+
+
+def lista_cf(file):
+
+    lista_output = []
+
+    for line in open(file, 'r').readlines():
+        cf = ""
+        cf = line.strip()
+
+        lista_output.append(cf)
+
+    return lista_output
+
+def maxString(ls):
+
+    massimo = len(ls[0])           O(1)
+
+    for s in ls:                   O(g35(n)*g36-37(n)), dove  g35(n) = O(n), g36 = O(1), g37 = O(1)
+        if massimo < len(s):       O(1)
+            massimo = len(s)       O(1)
+    return massimo
+
+    O(g31(n)) = O(n)
+
+def cercaParole(ls):
+
+    massimo = maxString(ls)    O(g31(n)) -> O(n)
+    print(massimo)
+
+    for s in ls:               O(g47(n) * O(g48-49(n))) dove g47(n)=O(n), g48 = O(1), g49 = O(1)
+        if len(s) == massimo:  O(1)
+            print(s)           O(1)  
+
+file = open_file()       
+
+li = lista_cf(file)
+
+cercaParole(li)
+
+T(n) = O(n)

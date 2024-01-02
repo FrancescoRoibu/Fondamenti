@@ -1,0 +1,49 @@
+"""
+Realizzare un programma Python che, chiedendo all'utente quattro caratteri per il comune,
+stampi tutti i codici fiscali contenenti i quattro caratteri indicanti il comune.
+
+Il programma deve utilizzare almeno una funzione che, ricevendo come parametro il nome
+di un file di codici fiscali, restituisca una lisa con tutti i codici fiscali presenti
+nel file.
+"""
+
+
+def open_file():
+
+    nome_file = input("Inserire nome file contenente elenco codici fiscale: ")
+
+    return nome_file
+
+
+def chiedi_comune():
+
+    comune = input("Inserire quattro caratteri per il comune: ")
+
+    return comune
+
+
+def lista_cf(file):
+
+    lista_output = []
+
+    for line in open(file, 'r').readlines():
+        cf = ""
+        cf = line.strip()
+
+        lista_output.append(cf)
+
+    return lista_output
+
+
+def cerca_cf():
+
+    file = open_file()
+
+    comune = chiedi_comune().upper()
+
+    for line in open(file):
+        if line[11:15] == comune:
+            print(line.strip())
+
+
+cerca_cf()
