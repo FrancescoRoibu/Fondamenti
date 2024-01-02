@@ -1,0 +1,53 @@
+"""
+Illustrare la complessità computazionale del programma realizzato nell'Esercizio 1
+calcolando in modo approssimato la funzione temporare T(n), assumendo che n siano le
+righe del file.
+
+Esprimere il risultato con la notazione O-grande.
+
+La notazione O fornisce una delimitazione superiore al tempo di esecuzione di un algoritmo, 
+cioè fornisce una valutazione approssimata per eccesso
+"""
+
+
+def open_file():
+
+    nome_file = input("Inserire nome file contenente elenco codici fiscale: ")
+
+    return nome_file
+
+
+def chiedi_cognome():
+
+    cognome = input("Inserire tre lettere del cognome: ")
+
+    return cognome
+
+
+def lista_cf(file):
+
+    lista_output = []
+
+    for line in open(file, 'r').readlines():
+        cf = ""
+        cf = line.strip()
+
+        lista_output.append(cf)
+
+    return lista_output
+
+
+def cerca_cf():
+
+    file = open_file()    O(1)
+
+    cognome = chiedi_cognome().upper()   O(1)
+
+    for line in open(file):        O(g46(n) * f47-48(n)) dove g46(n) = n, f47-48 = O(1) + O(1)
+        if line[0:3] == cognome:   O(1)  
+            print(line.strip())    O(1)
+
+
+cerca_cf()
+
+Quindi: O(1) + O(1) + O(n) * O(1) -> O(n)
